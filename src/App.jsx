@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 
 function App() {
   const [progress, setProgress] = useState(25);
-  const [formData, setFormData] = useState({})
- 
+  const [formData, setFormData] = useState({});
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    updateProgress();
+  };
+
+ 
   return (
     <>
      <div className='relative pt-10 h-[870px] w-full max-w-[600px] mx-auto bg-white'>
@@ -19,13 +24,22 @@ function App() {
 
         {/* Form */}
         <form>
-          <div className='mb-4'>
-            <label className='font-semibold text-[16px]'>Name Of Institution *</label>
-            <select name="" id="">
+          <div className='mb-4 flex flex-col items-start'>
+            <label className=' font-semibold text-[16px] ml-3 lg:ml-6'>Name Of Institution *</label>
+            <div className='w-full flex justify-center'>
+            <select
               name='institution'
               value={formData.institution}
+              onChange={handleChange}
+              className=' w-[400px] lg:w-[552px] border rounded px-3 py-2 '
+              >
+                <option value="">Select Institution</option>
+                <option value="WESOnline">WESOnline</option>
+                <option value="Other">Other</option>
             </select>
+            </div>
           </div>
+          
           <div className='mb-4'>
             <label className='font-semibold text-[16px]'>Where are you on your journey *</label>
           </div>
