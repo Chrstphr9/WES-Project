@@ -90,7 +90,7 @@ function App() {
           </div>
 
           <div className='mb-4'>
-          <label className='font-semibold text-[16px] ml-3 lg:ml-6'>
+            <label className='font-semibold text-[16px] ml-3 lg:ml-6'>
               What areas intrest you <span className="text-red-500">*</span>
             </label>
             <div className='w-full flex justify-center ss:justify-start px-5  '>
@@ -105,6 +105,17 @@ function App() {
                 <option value="Technology">Technology</option>
                 <option value="Science">Science</option>
               </select>
+            </div>
+
+            <div className="flex justify-between items-center w-full pt-9 lg:pt-20">
+              <button type="button" className="text-black font-medium ml-6">
+                Skip For Now
+              </button>
+              <button
+                type="submit"
+                className="bg-[#0256B2] lg:w-[190px] text-white font-semibold px-8 py-3 rounded-lg mr-6">
+                Continue
+              </button>
             </div>
 
           </div>
