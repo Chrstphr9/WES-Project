@@ -17,8 +17,28 @@ function App() {
           </div>       
         </div>
 
-
         {/* Form */}
+        <form>
+          <div className='mb-4'>
+            <label className='font-semibold text-[16px]'>Name Of Institution *</label>
+            <select name="" id="">
+              name='institution'
+              value={formData.institution}
+            </select>
+          </div>
+          <div className='mb-4'>
+            <label className='font-semibold text-[16px]'>Where are you on your journey *</label>
+          </div>
+          <div className="mb-4">
+            <label className='font-semibold text-[16px]'>Field of Study *</label>
+          </div>
+          <div className='mb-4'>
+            <label className='font-semibold text-[16px]'>GPA *</label>
+          </div>
+          <div className='mb-4'>
+            <label className='font-semibold text-[16px]'>What areas intrest you *</label>
+          </div>
+        </form>
      </div>
     </>
   )
