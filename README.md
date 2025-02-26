@@ -18,6 +18,7 @@ root/
 │   │   ├── gift.png
 │   │   ├── wow.png
 │   ├── components/
+│   │   ├── firstPage.js
 │   │   ├── PopUp.js
 │   ├── App.js
 │   ├── index.js
