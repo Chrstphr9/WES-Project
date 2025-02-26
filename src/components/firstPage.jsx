@@ -158,10 +158,10 @@ const firstPage = () => {
 
                     {/* Buttons */}
                     <div className="flex justify-between items-center w-full px-5 pt-[70px]">
-                        <button type="button" className="text-black font-medium">Skip For Now</button>
+                        <button type="button" className="text-black font-medium text-xs lg:text-lg">Skip For Now</button>
                         <button
                             type="submit"
-                            className="bg-[#0256B2] w-[190px] text-white font-semibold px-8 py-3 rounded-lg"
+                            className="bg-[#0256B2] lg:px-8 lg:py-3 lg:text-xl text-white font-normal text-sm px-4 py-1 rounded-lg"
                             onClick={(e) => {
                                 e.preventDefault();
                                 setIsPopupOpen(true);
