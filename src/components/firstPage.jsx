@@ -66,7 +66,7 @@ const firstPage = () => {
                     {/* Institution Name */}
                     <div className="mb-4 pt-[40px]">
                         <label className="font-semibold text-[16px] ml-6">
-                            Name Of Institution <span className="text-red-500">*</span>
+                            Name of Institution <span className="text-red-500">*</span>
                         </label>
                         <div className="w-full flex justify-center px-5">
                             <select
