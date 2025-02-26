@@ -24,6 +24,9 @@ function App() {
     setProgress((filledFields / 5) * 100);
   };
 
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+
   return (
     <>
       <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
@@ -66,6 +69,7 @@ function App() {
                 <select
                   name="institution"
                   value={formData.institution}
+                  required
                   onChange={handleChange}
                   className="text-[#7F8184] h-[48px] w-[552px] border rounded-lg px-3 py-2"
                 >
@@ -84,6 +88,7 @@ function App() {
                 <select
                   name="level"
                   value={formData.level}
+                  required
                   onChange={handleChange}
                   className="text-[#7F8184] h-[48px] w-[552px] border rounded-lg px-3 py-2"
                 >
@@ -104,6 +109,7 @@ function App() {
                   type="text"
                   name="fieldOfStudy"
                   value={formData.fieldOfStudy}
+                  required
                   onChange={handleChange}
                   className="text-[#7F8184] w-full h-[48px] rounded-lg border px-3"
                   placeholder="Chemistry"
@@ -115,9 +121,10 @@ function App() {
                   GPA <span className="text-red-500">*</span>
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="gpa"
                   value={formData.gpa}
+                  required
                   onChange={handleChange}
                   className="text-[#7F8184] w-full h-[48px] rounded-lg border px-3 text-center"
                   placeholder="------"
@@ -134,6 +141,7 @@ function App() {
                 <select
                   name="interest"
                   value={formData.interest}
+                  required
                   onChange={handleChange}
                   className="text-[#7F8184] h-[48px] w-[552px] border rounded-lg px-3 py-2"
                 >
@@ -151,8 +159,13 @@ function App() {
                 Skip For Now
               </button>
               <button
+              
                 type="submit"
                 className="bg-[#0256B2] w-[190px] text-white font-semibold px-8 py-3 rounded-lg"
+                onClick={(e) => {
+                  e.preventDefault();  
+                  setIsPopupOpen(true);
+                }}
               >
                 Continue
               </button>
@@ -160,7 +173,8 @@ function App() {
           </form>
         </div>
       </div>
-      <PopUp />
+      {isPopupOpen && <PopUp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />}
+
     </>
   );
 }

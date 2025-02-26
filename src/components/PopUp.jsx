@@ -2,7 +2,9 @@ import React from 'react'
 import WowImage from '../assets/wow.png';
 import Gift from '../assets/gift.png';
 
-const popUp = () => {
+const popUp = ({isOpen, onClose}) => {
+    if (!isOpen) return null;
+    
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white w-[350px] p-6 rounded-lg shadow-lg text-center">
@@ -31,7 +33,7 @@ const popUp = () => {
         </button>
 
         {/* Close Button */}
-        <button className="mt-2 text-gray-500 text-sm">
+        <button onClick={onClose} className="mt-2 text-gray-500 text-sm">
           Close
         </button>
       </div>
